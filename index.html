@@ -1,50 +1,95 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #e6f2e6;
-    color: #333;
-    margin: 0;
-    padding: 0;
-}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo Completo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e6f2e6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
 
-header {
-    background-color: #4CAF50;
-    color: white;
-    padding: 1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-header a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-}
+        header a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: opacity 0.2s ease;
+        }
 
-main {
-    padding: 2rem;
-}
+        header a:hover {
+            text-decoration: underline;
+            opacity: 0.9;
+        }
 
-form label {
-    display: block;
-    margin-top: 1rem;
-}
+        main {
+            padding: 2rem;
+            max-width: 500px;
+            margin: 0 auto;
+        }
 
-form input {
-    width: 100%;
-    padding: 0.5rem;
-    margin-top: 0.25rem;
-}
+        form label {
+            display: block;
+            margin-top: 1rem;
+        }
 
-button {
-    margin-top: 1rem;
-    padding: 0.5rem 1rem;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
+        form input {
+            width: 100%;
+            padding: 0.5rem;
+            margin-top: 0.25rem;
+            box-sizing: border-box;
+        }
 
-button:hover {
-    background-color: #45a049;
-}
+        button {
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Meu Site</h1>
+        <a href="#">Login</a>
+    </header>
+
+    <main>
+        <form id="meuFormulario">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" required>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </main>
+
+    <script>
+        document.getElementById('meuFormulario').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const nome = document.getElementById('nome').value;
+            alert('Olá, ' + nome + '! Formulário enviado com sucesso.');
+        });
+    </script>
+
+</body>
+</html>
