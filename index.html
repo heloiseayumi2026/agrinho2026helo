@@ -3,67 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exemplo Completo</title>
+    <title>Exemplo Modernizado</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #e6f2e6;
-            color: #333;
+        * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
 
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background-color: #f4f7f5;
+            color: #2d3748;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
         header {
-            background-color: #4CAF50;
+            background-color: #2e7d32;
             color: white;
-            padding: 1rem;
+            padding: 1rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 1.5rem;
+            font-weight: 600;
         }
 
         header a {
             color: white;
             text-decoration: none;
-            font-weight: bold;
-            transition: opacity 0.2s ease;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            transition: background-color 0.2s ease;
         }
 
         header a:hover {
-            text-decoration: underline;
-            opacity: 0.9;
+            background-color: rgba(255, 255, 255, 0.15);
         }
 
         main {
-            padding: 2rem;
-            max-width: 500px;
-            margin: 0 auto;
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem 1rem;
+        }
+
+        .card {
+            background: #ffffff;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            width: 100%;
+            max-width: 420px;
         }
 
         form label {
             display: block;
-            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: #4a5568;
         }
 
         form input {
             width: 100%;
-            padding: 0.5rem;
-            margin-top: 0.25rem;
-            box-sizing: border-box;
+            padding: 0.75rem 1rem;
+            border: 1px solid #cbd5e0;
+            border-radius: 6px;
+            font-size: 1rem;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+            outline: none;
+        }
+
+        form input:focus {
+            border-color: #2e7d32;
+            box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.2);
         }
 
         button {
-            margin-top: 1rem;
-            padding: 0.5rem 1rem;
-            background-color: #4CAF50;
+            margin-top: 1.5rem;
+            padding: 0.75rem 1rem;
+            background-color: #2e7d32;
             color: white;
             border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 600;
             cursor: pointer;
             width: 100%;
+            transition: background-color 0.2s ease, transform 0.1s ease;
         }
 
         button:hover {
-            background-color: #45a049;
+            background-color: #256629;
+        }
+
+        button:active {
+            transform: scale(0.98);
         }
     </style>
 </head>
@@ -75,12 +119,14 @@
     </header>
 
     <main>
-        <form id="meuFormulario">
-            <label for="nome">Nome:</label>
-            <input type="text" id="nome" required>
+        <div class="card">
+            <form id="meuFormulario">
+                <label for="nome">Nome completo</label>
+                <input type="text" id="nome" placeholder="Digite seu nome..." required>
 
-            <button type="submit">Enviar</button>
-        </form>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
     </main>
 
     <script>
